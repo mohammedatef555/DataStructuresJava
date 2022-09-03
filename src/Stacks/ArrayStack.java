@@ -1,15 +1,16 @@
-package stackArrayBasedImp;
+package Stacks;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import java.util.function.Consumer;
 
-public class Stack<T> {
+public class ArrayStack<T> implements Stack<T> {
     public T[] array;
     private int top;
     private int capacity;
 
-    public Stack(int capacity) {
+    public ArrayStack(int capacity) {
         this.capacity = capacity;
         array = (T[])new Object[capacity];
         top = 0;
@@ -40,7 +41,8 @@ public class Stack<T> {
     private void traverseStack(int index,Consumer<T> consumer) {
         if (index < top - 1)
             traverseStack(index + 1, consumer);
-        consumer.accept(array[index]);
+        if (top > 0)
+            consumer.accept(array[index]);
     }
 
     public void traverseStack(Consumer<T> consumer) {
