@@ -1,8 +1,8 @@
 package Queues;
 
-public class UseArrayBasedQueue {
+public class UseLinkedBasedQueue {
     public static void main(String[] args) {
-        Queue<Integer> queue = new ArrayBasedQueue<>(10);
+        Queue<Integer> queue = new LinkedBasedQueue<>(10);
 
         int counter = 1;
         while (counter != 11) {
